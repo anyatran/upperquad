@@ -12,13 +12,13 @@ const server = new WebpackDevServer(webpack(config), {
   hot: true,
   setup: function(app) {
     app.get('/instagram', (req, res) => {
-      request.get('https://www.instagram.com/anya_tran/?__a=1', (err, response, body) => {
+      request.get('http://uqstaging.com/instagram/', (err, response, body) => {
         res.send(body);
       });
     });
-
   }
 });
+
 server.listen(port, function (err, result) {
   if (err) {
     console.log(err)
